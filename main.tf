@@ -6,11 +6,11 @@ provider "aws" {
   endpoint                    = "http://localhost:4566"
 }
 
-resource "aws_s3_bucket" "test_bucket" {
+resource "aws_s3_bucket" "mi-nuevo-bucket" {
   bucket = "mi-bucket-desde-ci"
 }
 
 resource "aws_s3_bucket_acl" "acl" {
-  bucket = aws_s3_bucket.test_bucket.id
+  bucket = aws_s3_bucket.mi-nuevo-bucket.id
   acl    = "private"
 }
